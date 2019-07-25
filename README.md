@@ -6,11 +6,6 @@ or research market microstructure.
 
 Parity requires Java Runtime Environment (JRE) 8 or newer.
 
-## Download
-
-See the [latest release][] on GitHub.
-
-  [latest release]: https://github.com/paritytrading/parity/releases/latest
 
 ## Modules
 
@@ -31,10 +26,6 @@ Parity contains the following applications:
 
 - [**Parity Trade Reporter**](applications/reporter) is a simple console
   application that displays all occurred trades in the trading system.
-
-See the [Wiki][] for additional applications.
-
-  [Wiki]: https://github.com/paritytrading/parity/wiki
 
 Parity contains the following libraries:
 
@@ -69,19 +60,5 @@ Build Parity with Maven:
 mvn package
 ```
 
-## Links
-
-For more information on Parity:
-
-- Follow [@paritytrading](https://twitter.com/paritytrading) on Twitter for
-  news and announcements
-- Join [paritytrading/chat](https://gitter.im/paritytrading/chat) on Gitter
-  for discussions
-
-## License
-
-Copyright 2014 Jussi Virtanen and [contributors][].
-
-  [contributors]: https://github.com/paritytrading/parity/graphs/contributors
 
 Released under the Apache License, Version 2.0. See `LICENSE.txt` for details.
