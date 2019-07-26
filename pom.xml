@@ -25,9 +25,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:paritytrading/parity.git</connection>
-    <developerConnection>scm:git:git@github.com:paritytrading/parity.git</developerConnection>
-    <url>https://github.com/paritytrading/parity</url>
+    <connection>scm:git:git@github.com:rrmaje/ovonpar-system.git</connection>
+    <developerConnection>scm:git:git@github.com:rrmaje/ovonpar-system.git</developerConnection>
+    <url>https://github.com/rrmaje/ovonpar-system</url>
     <tag>HEAD</tag>
   </scm>
 
