@@ -159,6 +159,7 @@ class Session implements Closeable, SoupBinTCPServerStatusListener, POEServerLis
         orderAccepted.quantity    = message.quantity;
         orderAccepted.price       = message.price;
         orderAccepted.orderNumber = order.getOrderNumber();
+        orderAccepted.client = message.client;
 
         send(orderAccepted);
 

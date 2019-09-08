@@ -12,7 +12,7 @@ public class POE {
     }
 
     public static final int MAX_INBOUND_MESSAGE_LENGTH  = 50;
-    public static final int MAX_OUTBOUND_MESSAGE_LENGTH = 58;
+    public static final int MAX_OUTBOUND_MESSAGE_LENGTH = 66;
 
     public static final byte BUY  = 'B';
     public static final byte SELL = 'S';
@@ -142,6 +142,7 @@ public class POE {
         public long   quantity;
         public long   price;
         public long   orderNumber;
+        public long 	client;
 
         /**
          * Create an instance.
@@ -159,6 +160,7 @@ public class POE {
             quantity    = buffer.getLong();
             price       = buffer.getLong();
             orderNumber = buffer.getLong();
+            client = buffer.getLong();
         }
 
         @Override
@@ -171,6 +173,7 @@ public class POE {
             buffer.putLong(quantity);
             buffer.putLong(price);
             buffer.putLong(orderNumber);
+            buffer.putLong(client);
         }
     }
 
