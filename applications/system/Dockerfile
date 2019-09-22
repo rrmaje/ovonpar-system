@@ -3,6 +3,7 @@ WORKDIR /opt/docker
 COPY ./parity-system.jar /opt/docker
 COPY ./etc /opt/docker/etc
 COPY ./parity-system.sh /opt/docker
+RUN chmod 733 -R /opt/docker/etc
 USER daemon
 EXPOSE 5000
 EXPOSE 5001
