@@ -1,0 +1,27 @@
+apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: parity-system
+spec:
+  selector:
+    matchLabels:
+      app: parity-system
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: parity-system
+    spec:
+      containers:
+      - name: parity-system 
+        image: docker.io/rrmaje/parity-system
+        imagePullPolicy: Always
+        env:
+            - name: PARITY_SYSTEM_ADDRESS
+              value: "127.0.0.1"
+        ports:
+        - containerPort: 4000
+        - containerPort: 5000
+        - containerPort: 5001
+        - containerPort: 6000
+        - containerPort: 6001

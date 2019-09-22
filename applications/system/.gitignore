@@ -4,3 +4,4 @@ project/target/
 .project 
 .settings
 parity-system.jar
+nohup.out

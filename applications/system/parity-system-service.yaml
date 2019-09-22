@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: parity-system
+  labels:
+    app: parity-system
+spec:
+  type: ClusterIP
+  ports:  
+   - port: 4000
+     name: order-entry
+     targetPort: 4000
+     protocol: TCP
+   - port: 5000
+     name: market-data-multicast
+     targetPort: 5000
+     protocol: UDP
+   - port: 6000
+     name: market-reporting-multicast
+     targetPort: 6000
+     protocol: UDP
+   - port: 5001
+     name: market-data-request
+     targetPort: 5001
+     protocol: UDP
+   - port: 6001
+     name: market-reporting-request
+     targetPort: 6001
+     protocol: UDP
+  selector:
+   app: parity-system
