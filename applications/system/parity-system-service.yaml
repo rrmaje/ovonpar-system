@@ -19,6 +19,14 @@ spec:
      name: market-reporting-multicast
      targetPort: 6000
      protocol: UDP
+   - port: 5000
+     name: market-data-tcp
+     targetPort: 5002
+     protocol: TCP
+   - port: 6000
+     name: market-reporting-tcp
+     targetPort: 6002
+     protocol: TCP
    - port: 5001
      name: market-data-request
      targetPort: 5001

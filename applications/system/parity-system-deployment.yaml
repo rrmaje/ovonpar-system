@@ -18,10 +18,43 @@ spec:
         imagePullPolicy: Always
         env:
             - name: PARITY_SYSTEM_ADDRESS
-              value: "127.0.0.1"
+              valueFrom:
+                fieldRef:
+                   fieldPath: status.podIP 
+            - name: PARITY_SYSTEM_INSTRUMENTS
+              value: "S-class,M-class,L-class"
         ports:
-        - containerPort: 4000
-        - containerPort: 5000
-        - containerPort: 5001
-        - containerPort: 6000
-        - containerPort: 6001
+         - containerPort: 4000
+         - containerPort: 5000
+         - containerPort: 5001
+         - containerPort: 6000
+         - containerPort: 6001
+      - name: nassau-soupbintcp-gateway-market-reporting
+        image: docker.io/rrmaje/nassau-soupbintcp-gateway
+        imagePullPolicy: Always
+        env:
+            - name: NASSAU_SOUPBINTCP_GATEWAY_UPSTREAM_REQUEST_ADDRESS
+              valueFrom:
+                fieldRef:
+                   fieldPath: status.podIP
+            - name: NASSAU_SOUPBINTCP_GATEWAY_DOWNSTREAM_PORT
+              value: "6002"
+            - name: NASSAU_SOUPBINTCP_GATEWAY_UPSTREAM_MULTICAST_PORT
+              value: "6000"
+            - name: NASSAU_SOUPBINTCP_GATEWAY_UPSTREAM_REQUEST_PORT
+              value: "6001"
+        ports:
+            - containerPort: 6002
+      - name: nassau-soupbintcp-gateway-market-data
+        image: docker.io/rrmaje/nassau-soupbintcp-gateway
+        imagePullPolicy: Always
+        env:
+            - name: NASSAU_SOUPBINTCP_GATEWAY_UPSTREAM_REQUEST_ADDRESS
+              valueFrom:
+                fieldRef:
+                   fieldPath: status.podIP
+            - name: NASSAU_SOUPBINTCP_GATEWAY_DOWNSTREAM_PORT
+              value: "5002"
+        ports:
+            - containerPort: 5002
+

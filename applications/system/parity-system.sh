@@ -23,11 +23,7 @@ market-data {
 	    port    = 4000
     }
 
-    instruments = [
-      S-class,
-        M-class,
-	  L-class,
-	  ]
+instruments = [ $PARITY_SYSTEM_INSTRUMENTS ]
 EOF
 
 echo `cat etc/exchange.conf`
